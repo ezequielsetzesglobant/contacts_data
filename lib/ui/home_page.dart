@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../bloc/contact_interface_bloc.dart';
+import '../bloc/interface/i_contact_bloc.dart';
 import '../utils/constants.dart';
 import '../model/contact.dart';
 import '../utils/text_styles.dart';
 
 class HomePage extends StatelessWidget {
-  final ContactInterfaceBloc bloc;
+  final IContactBloc bloc;
 
   HomePage(
     this.bloc,
@@ -14,6 +14,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(Constants.titleApp),
+      ),
       body: SafeArea(
         child: FutureBuilder(
           future: bloc.getContacts(),

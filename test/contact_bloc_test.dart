@@ -1,91 +1,30 @@
 import 'package:contacts_data/bloc/contact_bloc.dart';
 import 'package:contacts_data/model/contact.dart';
-import 'package:contacts_data/model/coordinates.dart';
-import 'package:contacts_data/model/dob.dart';
-import 'package:contacts_data/model/id.dart';
-import 'package:contacts_data/model/location.dart';
-import 'package:contacts_data/model/login.dart';
-import 'package:contacts_data/model/name.dart';
-import 'package:contacts_data/model/picture.dart';
-import 'package:contacts_data/model/registered.dart';
-import 'package:contacts_data/model/street.dart';
-import 'package:contacts_data/model/time_zone.dart';
-import 'package:contacts_data/repository/repository_contact.dart';
-import 'package:contacts_data/service/service_contact.dart';
+import 'package:contacts_data/repository/contact_repository.dart';
+import 'package:contacts_data/service/contact_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'contact_bloc_test.mocks.dart';
+import 'dart:convert';
+import 'dart:io';
 
 @GenerateMocks([
-  ServiceContact,
+  ContactService,
 ])
 void main() {
   late ContactBloc bloc;
-  late RepositoryContact repository;
+  late ContactRepository repository;
   late MockServiceContact service;
   late Contact contact;
 
   setUp(() {
     service = MockServiceContact();
-    repository = RepositoryContact(service);
+    repository = ContactRepository(service);
     bloc = ContactBloc(repository);
-    contact = Contact(
-      gender: 'gender',
-      name: Name(
-        title: 'title',
-        first: 'first',
-        last: 'last',
-      ),
-      location: Location(
-        street: Street(
-          number: 1,
-          name: 'name',
-        ),
-        city: 'city',
-        state: 'state',
-        country: 'country',
-        postcode: 1,
-        coordinates: Coordinates(
-          latitude: 'latitude',
-          longitude: 'longitude',
-        ),
-        timeZone: TimeZone(
-          offset: 'offset',
-          description: 'description',
-        ),
-      ),
-      email: 'email',
-      login: Login(
-        uuid: 'uuid',
-        userName: 'userName',
-        password: 'password',
-        salt: 'salt',
-        md5: 'md5',
-        sha1: 'sha1',
-        sha256: 'sha256',
-      ),
-      dob: Dob(
-        date: 'date',
-        age: 1,
-      ),
-      registered: Registered(
-        date: 'date',
-        age: 1,
-      ),
-      phone: 'phone',
-      cell: 'cell',
-      id: Id(
-        name: 'name',
-        value: 'value',
-      ),
-      picture: Picture(
-        large: 'large',
-        medium: 'medium',
-        thumbnail: 'thumbnail',
-      ),
-      nat: 'nat',
-    );
+    File file = File(
+        '/Users/ezequiel.setzes/StudioProjects/contacts_data/test/resources/json_test_data.json');
+    contact = Contact.fromJson(json.decode(file.readAsStringSync()));
   });
 
   group('Check for existence and non-existence of widgets', () {

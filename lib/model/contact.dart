@@ -3,7 +3,7 @@ import 'location.dart';
 import 'name.dart';
 import 'picture.dart';
 import 'registered.dart';
-import 'dob.dart';
+import 'dateOfBirth.dart';
 import 'login.dart';
 
 class Contact {
@@ -12,13 +12,13 @@ class Contact {
   Location location;
   String email;
   Login login;
-  Dob dob;
+  DateOfBirth dateOfBirth;
   Registered registered;
   String phone;
   String cell;
   Id id;
   Picture picture;
-  String nat;
+  String nationality;
 
   Contact({
     required this.gender,
@@ -26,13 +26,13 @@ class Contact {
     required this.location,
     required this.email,
     required this.login,
-    required this.dob,
+    required this.dateOfBirth,
     required this.registered,
     required this.phone,
     required this.cell,
     required this.id,
     required this.picture,
-    required this.nat,
+    required this.nationality,
   });
 
   factory Contact.fromJson(Map<String, dynamic> json) {
@@ -42,13 +42,13 @@ class Contact {
       location: Location.fromJson(json['location']),
       email: json['email'],
       login: Login.fromJson(json['login']),
-      dob: Dob.fromJson(json['dob']),
+      dateOfBirth: DateOfBirth.fromJson(json['dob']),
       registered: Registered.fromJson(json['registered']),
       phone: json['phone'],
       cell: json['cell'],
       id: Id.fromJson(json['id']),
       picture: Picture.fromJson(json['picture']),
-      nat: json['nat'],
+      nationality: json['nat'],
     );
   }
 }

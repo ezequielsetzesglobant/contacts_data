@@ -1,9 +1,9 @@
-import 'contact_interface_bloc.dart';
+import 'interface/i_contact_bloc.dart';
 import '../model/contact.dart';
-import '../repository/repository_interface_contact.dart';
+import '../repository/interface/i_contact_repository.dart';
 
-class ContactBloc extends ContactInterfaceBloc {
-  final RepositoryInterfaceContact repository;
+class ContactBloc extends IContactBloc {
+  final IContactRepository repository;
 
   ContactBloc(
     this.repository,

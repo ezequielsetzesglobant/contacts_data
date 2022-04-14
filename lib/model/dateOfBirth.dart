@@ -1,14 +1,14 @@
-class Dob {
+class DateOfBirth {
   String date;
   int age;
 
-  Dob({
+  DateOfBirth({
     required this.date,
     required this.age,
   });
 
-  factory Dob.fromJson(Map<String, dynamic> json) {
-    return Dob(
+  factory DateOfBirth.fromJson(Map<String, dynamic> json) {
+    return DateOfBirth(
       date: json['date'],
       age: json['age'],
     );

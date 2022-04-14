@@ -1,17 +1,18 @@
 import 'dart:convert';
+import 'dart:io';
 import '../model/contact.dart';
 import '../model/contact_data.dart';
 import '../utils/constants.dart';
-import 'service_interface_contact.dart';
+import 'interface/i_contact_service.dart';
 import 'package:http/http.dart' as http;
 
-class ServiceContact extends ServiceInterfaceContact {
+class ContactService extends IContactService {
   http.Client client = http.Client();
 
   @override
   Future<List<Contact>> getContacts() async {
     final response = await client.get(Uri.parse(Constants.url));
-    if (response.statusCode == Constants.status) {
+    if (response.statusCode == HttpStatus.ok) {
       return ContactData.fromJson(json.decode(response.body)).results;
     } else {
       throw Exception(response.statusCode);

@@ -1,5 +1,5 @@
-import 'repository/repository_contact.dart';
-import 'service/service_contact.dart';
+import 'repository/contact_repository.dart';
+import 'service/contact_service.dart';
 import 'package:flutter/material.dart';
 import 'bloc/contact_bloc.dart';
 import 'ui/home_page.dart';
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(ContactBloc(RepositoryContact(ServiceContact()))),
+      home: HomePage(ContactBloc(ContactRepository(ContactService()))),
     );
   }
 }
