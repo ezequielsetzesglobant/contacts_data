@@ -3,7 +3,7 @@ import 'location.dart';
 import 'name.dart';
 import 'picture.dart';
 import 'registered.dart';
-import 'dateOfBirth.dart';
+import 'date_of_birth.dart';
 import 'login.dart';
 
 class Contact {
