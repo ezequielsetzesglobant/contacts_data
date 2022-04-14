@@ -3,6 +3,7 @@ import '../bloc/interface/i_contact_bloc.dart';
 import '../utils/constants.dart';
 import '../model/contact.dart';
 import '../utils/text_styles.dart';
+import 'details_page.dart';
 
 class HomePage extends StatelessWidget {
   final IContactBloc bloc;
@@ -38,6 +39,22 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailsPage(
+                            image: '${snapshot.data?[index].picture.large}',
+                            fullName: '${snapshot.data?[index].name.first} ${snapshot.data?[index].name.last}',
+                            email: '${snapshot.data?[index].email}',
+                            phone: '${snapshot.data?[index].phone}',
+                            cell: '${snapshot.data?[index].cell}',
+                            age: '${snapshot.data?[index].dateOfBirth.age}',
+                            nationality: '${snapshot.data?[index].nationality}',
+                          ),
+                        ),
+                      );
+                    },
                   );
                 },
               );
