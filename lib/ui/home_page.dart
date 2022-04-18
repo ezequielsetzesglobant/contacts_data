@@ -3,6 +3,7 @@ import '../bloc/interface/i_contact_bloc.dart';
 import '../utils/constants.dart';
 import '../model/contact.dart';
 import '../utils/text_styles.dart';
+import 'details_page.dart';
 
 class HomePage extends StatelessWidget {
   final IContactBloc bloc;
@@ -32,12 +33,22 @@ class HomePage extends StatelessWidget {
                         height: Constants.contactBoxHeight,
                         child: Center(
                           child: Text(
-                            '${snapshot.data?[index].name.first} ${snapshot.data?[index].name.last}',
+                            '${snapshot.data?[index].fullName()}',
                             style: TextStyles.contactTextStyle,
                           ),
                         ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailsPage(
+                            contact: snapshot.data![index],
+                          ),
+                        ),
+                      );
+                    },
                   );
                 },
               );

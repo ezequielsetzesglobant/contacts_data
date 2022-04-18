@@ -1,8 +1,4 @@
 class Picture {
-  String large;
-  String medium;
-  String thumbnail;
-
   Picture({
     required this.large,
     required this.medium,
@@ -16,4 +12,8 @@ class Picture {
       thumbnail: json['thumbnail'],
     );
   }
+
+  String large;
+  String medium;
+  String thumbnail;
 }

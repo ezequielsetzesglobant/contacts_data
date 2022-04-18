@@ -1,9 +1,4 @@
 class Info {
-  String seed;
-  int results;
-  int page;
-  String version;
-
   Info({
     required this.seed,
     required this.results,
@@ -19,4 +14,9 @@ class Info {
       version: json['version'],
     );
   }
+
+  String seed;
+  int results;
+  int page;
+  String version;
 }

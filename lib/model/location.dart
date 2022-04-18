@@ -3,14 +3,6 @@ import 'time_zone.dart';
 import 'street.dart';
 
 class Location {
-  Street street;
-  String city;
-  String state;
-  String country;
-  var postcode;
-  Coordinates coordinates;
-  TimeZone timeZone;
-
   Location({
     required this.street,
     required this.city,
@@ -32,4 +24,12 @@ class Location {
       timeZone: TimeZone.fromJson(json['timezone']),
     );
   }
+
+  Street street;
+  String city;
+  String state;
+  String country;
+  var postcode;
+  Coordinates coordinates;
+  TimeZone timeZone;
 }

@@ -1,7 +1,4 @@
 class Coordinates {
-  String latitude;
-  String longitude;
-
   Coordinates({
     required this.latitude,
     required this.longitude,
@@ -13,4 +10,7 @@ class Coordinates {
       longitude: json['longitude'],
     );
   }
+
+  String latitude;
+  String longitude;
 }

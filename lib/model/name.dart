@@ -1,8 +1,4 @@
 class Name {
-  late String title;
-  late String first;
-  late String last;
-
   Name({
     required this.title,
     required this.first,
@@ -16,4 +12,8 @@ class Name {
       last: json['last'],
     );
   }
+
+  late String title;
+  late String first;
+  late String last;
 }
