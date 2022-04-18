@@ -1,24 +1,13 @@
 import 'package:flutter/material.dart';
+import '../model/contact.dart';
 import '../utils/constants.dart';
 import '../utils/text_styles.dart';
 
 class DetailsPage extends StatelessWidget {
-  final String image;
-  final String fullName;
-  final String email;
-  final String phone;
-  final String cell;
-  final String age;
-  final String nationality;
+  final Contact contact;
 
   const DetailsPage({
-    required this.image,
-    required this.fullName,
-    required this.email,
-    required this.phone,
-    required this.cell,
-    required this.age,
-    required this.nationality,
+    required this.contact,
   });
 
   @override
@@ -43,7 +32,7 @@ class DetailsPage extends StatelessWidget {
                     ),
                     child: FadeInImage.assetNetwork(
                       placeholder: Constants.placeholder,
-                      image: image,
+                      image: contact.picture.large,
                       height: Constants.imageSize,
                       width: Constants.imageSize,
                       fit: BoxFit.fill,
@@ -54,28 +43,28 @@ class DetailsPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(Constants.columnElementsPadding),
                 child: Text(
-                  fullName,
+                  contact.fullName(),
                   style: TextStyles.fullNameTextStyle,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(Constants.columnElementsPadding),
                 child: Text(
-                  '${Constants.phoneLabel} $phone',
+                  '${Constants.phoneLabel} ${contact.phone}',
                   style: TextStyles.phoneTextStyle,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(Constants.columnElementsPadding),
                 child: Text(
-                  '${Constants.cellLabel} $cell',
+                  '${Constants.cellLabel} ${contact.cell}',
                   style: TextStyles.cellTextStyle,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(Constants.columnElementsPadding),
                 child: Text(
-                  email,
+                  contact.email,
                   style: TextStyles.emailTextStyle,
                 ),
               ),
@@ -88,7 +77,7 @@ class DetailsPage extends StatelessWidget {
                       padding:
                           const EdgeInsets.all(Constants.rowElementsPadding),
                       child: Text(
-                        '$age ${Constants.ageLabel}',
+                        '${contact.dateOfBirth.age} ${Constants.ageLabel}',
                         textAlign: TextAlign.center,
                         style: TextStyles.ageTextStyle,
                       ),
@@ -97,7 +86,7 @@ class DetailsPage extends StatelessWidget {
                       padding:
                           const EdgeInsets.all(Constants.rowElementsPadding),
                       child: Text(
-                        '${Constants.nationalityLabel} $nationality',
+                        '${Constants.nationalityLabel} ${contact.nationality}',
                         style: TextStyles.nationalityTextStyle,
                       ),
                     ),

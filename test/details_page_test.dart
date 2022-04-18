@@ -20,13 +20,7 @@ void main() {
       () => tester.pumpWidget(
         MaterialApp(
           home: DetailsPage(
-            image: contact.picture.large,
-            fullName: contact.fullName(),
-            email: contact.email,
-            phone: contact.phone,
-            cell: contact.cell,
-            age: '${contact.dateOfBirth.age}',
-            nationality: contact.nationality,
+            contact: contact,
           ),
         ),
       ),

@@ -44,13 +44,7 @@ class HomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => DetailsPage(
-                            image: '${snapshot.data?[index].picture.large}',
-                            fullName: '${snapshot.data?[index].fullName()}',
-                            email: '${snapshot.data?[index].email}',
-                            phone: '${snapshot.data?[index].phone}',
-                            cell: '${snapshot.data?[index].cell}',
-                            age: '${snapshot.data?[index].dateOfBirth.age}',
-                            nationality: '${snapshot.data?[index].nationality}',
+                            contact: snapshot.data![index],
                           ),
                         ),
                       );
