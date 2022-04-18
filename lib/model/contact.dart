@@ -7,19 +7,6 @@ import 'date_of_birth.dart';
 import 'login.dart';
 
 class Contact {
-  String gender;
-  Name name;
-  Location location;
-  String email;
-  Login login;
-  DateOfBirth dateOfBirth;
-  Registered registered;
-  String phone;
-  String cell;
-  Id id;
-  Picture picture;
-  String nationality;
-
   Contact({
     required this.gender,
     required this.name,
@@ -51,4 +38,19 @@ class Contact {
       nationality: json['nat'],
     );
   }
+
+  String gender;
+  Name name;
+  Location location;
+  String email;
+  Login login;
+  DateOfBirth dateOfBirth;
+  Registered registered;
+  String phone;
+  String cell;
+  Id id;
+  Picture picture;
+  String nationality;
+
+  String fullName() => '${name.first} ${name.last}';
 }

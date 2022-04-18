@@ -1,7 +1,4 @@
 class Id {
-  String name;
-  String? value;
-
   Id({
     required this.name,
     this.value,
@@ -13,4 +10,7 @@ class Id {
       value: json['value'],
     );
   }
+
+  String name;
+  String? value;
 }

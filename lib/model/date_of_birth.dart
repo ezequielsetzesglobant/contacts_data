@@ -1,7 +1,4 @@
 class DateOfBirth {
-  String date;
-  int age;
-
   DateOfBirth({
     required this.date,
     required this.age,
@@ -13,4 +10,7 @@ class DateOfBirth {
       age: json['age'],
     );
   }
+
+  String date;
+  int age;
 }

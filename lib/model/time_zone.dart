@@ -1,7 +1,4 @@
 class TimeZone {
-  String offset;
-  String description;
-
   TimeZone({
     required this.offset,
     required this.description,
@@ -13,4 +10,7 @@ class TimeZone {
       description: json['description'],
     );
   }
+
+  String offset;
+  String description;
 }

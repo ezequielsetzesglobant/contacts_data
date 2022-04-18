@@ -2,9 +2,6 @@ import 'contact.dart';
 import 'info.dart';
 
 class ContactData {
-  List<Contact> results;
-  Info info;
-
   ContactData({
     required this.results,
     required this.info,
@@ -19,4 +16,7 @@ class ContactData {
       info: Info.fromJson(json['info']),
     );
   }
+
+  List<Contact> results;
+  Info info;
 }

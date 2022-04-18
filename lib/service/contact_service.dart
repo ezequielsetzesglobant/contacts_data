@@ -7,7 +7,7 @@ import 'interface/i_contact_service.dart';
 import 'package:http/http.dart' as http;
 
 class ContactService extends IContactService {
-  http.Client client = http.Client();
+  var client = http.Client();
 
   @override
   Future<List<Contact>> getContacts() async {

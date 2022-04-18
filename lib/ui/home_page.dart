@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                         height: Constants.contactBoxHeight,
                         child: Center(
                           child: Text(
-                            '${snapshot.data?[index].name.first} ${snapshot.data?[index].name.last}',
+                            '${snapshot.data?[index].fullName()}',
                             style: TextStyles.contactTextStyle,
                           ),
                         ),
@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => DetailsPage(
                             image: '${snapshot.data?[index].picture.large}',
-                            fullName: '${snapshot.data?[index].name.first} ${snapshot.data?[index].name.last}',
+                            fullName: '${snapshot.data?[index].fullName()}',
                             email: '${snapshot.data?[index].email}',
                             phone: '${snapshot.data?[index].phone}',
                             cell: '${snapshot.data?[index].cell}',

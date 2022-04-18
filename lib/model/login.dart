@@ -1,12 +1,4 @@
 class Login {
-  String uuid;
-  String userName;
-  String password;
-  String salt;
-  String md5;
-  String sha1;
-  String sha256;
-
   Login({
     required this.uuid,
     required this.userName,
@@ -28,4 +20,12 @@ class Login {
       sha256: json['sha256'],
     );
   }
+
+  String uuid;
+  String userName;
+  String password;
+  String salt;
+  String md5;
+  String sha1;
+  String sha256;
 }

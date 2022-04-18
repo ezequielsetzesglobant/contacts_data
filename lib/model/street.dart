@@ -1,7 +1,4 @@
 class Street {
-  int number;
-  String name;
-
   Street({
     required this.number,
     required this.name,
@@ -13,4 +10,7 @@ class Street {
       name: json['name'],
     );
   }
+
+  int number;
+  String name;
 }
