@@ -13,7 +13,7 @@ class Name {
     );
   }
 
-  late String title;
-  late String first;
-  late String last;
+  String title;
+  String first;
+  String last;
 }
