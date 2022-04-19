@@ -1,0 +1,56 @@
+{
+  "gender": "female",
+  "name": {
+    "title": "Miss",
+    "first": "Zoey",
+    "last": "Castro"
+  },
+  "location": {
+    "street": {
+      "number": 2161,
+      "name": "Paddock Way"
+    },
+    "city": "Brisbane",
+    "state": "Northern Territory",
+    "country": "Australia",
+    "postcode": 4076,
+    "coordinates": {
+      "latitude": "-85.8148",
+      "longitude": "77.2441"
+    },
+    "timezone": {
+      "offset": "+2:00",
+      "description": "Kaliningrad, South Africa"
+    }
+  },
+  "email": "zoey.castro@example.com",
+  "login": {
+    "uuid": "f2383924-d536-4937-97df-d6ed24919853",
+    "username": "yellowswan452",
+    "password": "spotty",
+    "salt": "wnyJmEfC",
+    "md5": "b2646fe213a18037d58131cc8382348b",
+    "sha1": "a500a9b8bbcf00bde3ea5a027464b84f4ab7b044",
+    "sha256": "440764fe81fd9a361ebad74af8a4afc1d56e216666f520d05aa6c55b84ec8041"
+  },
+  "dob": {
+    "date": "1993-12-31T09:43:21.515Z",
+    "age": 29
+  },
+  "registered": {
+    "date": "2017-04-02T00:04:08.834Z",
+    "age": 5
+  },
+  "phone": "02-5055-3217",
+  "cell": "0437-682-616",
+  "id": {
+    "name": "TFN",
+    "value": "695413511"
+  },
+  "picture": {
+    "large": "https://randomuser.me/api/portraits/women/14.jpg",
+    "medium": "https://randomuser.me/api/portraits/med/women/14.jpg",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/14.jpg"
+  },
+  "nat": "AU"
+}
